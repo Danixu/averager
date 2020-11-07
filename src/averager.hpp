@@ -23,7 +23,8 @@ T averager<T, ITEMS_NUMBER>::getAverage()
 template <class T, int ITEMS_NUMBER>
 T averager<T, ITEMS_NUMBER>::getAverage(bool ignoreEmpty)
 {
-  T total = 0;
+  // Double to avoid variable overload
+  double total = 0;
   int count = 0;
   for (int i=0; i < ITEMS_NUMBER; i++)
   {
@@ -40,7 +41,7 @@ T averager<T, ITEMS_NUMBER>::getAverage(bool ignoreEmpty)
   }
   else
   {
-    return (total/count);
+    return (T)(total/count);
   }
 }
 
