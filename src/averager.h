@@ -6,8 +6,7 @@ class averager {
 
       // Functions
       void append(T);
-      T getAverage();
-      T getAverage(bool);
+      T getAverage(bool ignoreEmpty = true);
       T getItem(int);
       void clear();
    

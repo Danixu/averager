@@ -15,12 +15,6 @@ void averager<T, ITEMS_NUMBER>::append(T value)
 }
 
 template <class T, int ITEMS_NUMBER>
-T averager<T, ITEMS_NUMBER>::getAverage()
-{
-  return getAverage(true);
-}
-
-template <class T, int ITEMS_NUMBER>
 T averager<T, ITEMS_NUMBER>::getAverage(bool ignoreEmpty)
 {
   // Double to avoid variable overload
@@ -28,7 +22,7 @@ T averager<T, ITEMS_NUMBER>::getAverage(bool ignoreEmpty)
   int count = 0;
   for (int i=0; i < ITEMS_NUMBER; i++)
   {
-    if (!ignoreEmpty && _items[i] != 0)
+    if (!ignoreEmpty || _items[i] != 0)
     {
       total += _items[i];
       count++;
