@@ -4,15 +4,23 @@ class averager {
    public:
       averager();
 
-      // Functions
+      // Functions Average
       void append(T);
       T getAverage(bool ignoreEmpty = true);
       T getItem(int);
       void clear();
+
+      // Functions Exponential Moving Average
+      void updateExponentialMovingAverage(T);
+      void setExponentialMovingAverageAlpha(float);
+      T getExponentialMovingAverage();
+      void clearExponentialMovingAverage();
    
    // Internal stuff
    protected:
       T _items[ITEMS_NUMBER];
+      T _exponentialMovingAverage = 0;
+      float _exponentialMovingAverageAlpha = 0.1;
 };
 
 #include "averager.hpp"
