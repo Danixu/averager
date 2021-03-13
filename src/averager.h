@@ -19,7 +19,7 @@ class averager {
    // Internal stuff
    protected:
       T _items[ITEMS_NUMBER];
-      T _exponentialMovingAverage = 0;
+      double _exponentialMovingAverage = 0.0;
       float _exponentialMovingAverageAlpha = 0.1;
 };
 

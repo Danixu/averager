@@ -49,7 +49,7 @@ void averager<T, ITEMS_NUMBER>::clear() {
 
 template <class T, int ITEMS_NUMBER>
 void averager<T, ITEMS_NUMBER>::updateExponentialMovingAverage(T newEMA) {
-  _exponentialMovingAverage = (_exponentialMovingAverageAlpha * newEMA) + ((1 - _exponentialMovingAverageAlpha) * _exponentialMovingAverage);
+  _exponentialMovingAverage = (_exponentialMovingAverageAlpha * (float)newEMA) + ((1.0 - _exponentialMovingAverageAlpha) * _exponentialMovingAverage);
 }
 
 template <class T, int ITEMS_NUMBER>
@@ -59,7 +59,7 @@ void averager<T, ITEMS_NUMBER>::setExponentialMovingAverageAlpha(float alpha) {
 
 template <class T, int ITEMS_NUMBER>
 T averager<T, ITEMS_NUMBER>::getExponentialMovingAverage() {
-  return _exponentialMovingAverage;
+  return (T)_exponentialMovingAverage;
 }
 
 template <class T, int ITEMS_NUMBER>
